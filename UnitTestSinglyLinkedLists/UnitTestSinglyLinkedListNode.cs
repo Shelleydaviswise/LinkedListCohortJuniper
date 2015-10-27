@@ -20,7 +20,7 @@ namespace UnitTestSinglyLinkedLists
         public void NodeDefaultNext()
         {
             SinglyLinkedListNode node = new SinglyLinkedListNode("foo");
-            Assert.IsNull(node.Next);
+            Assert.IsNull(node.Next);  
         }
 
         [TestMethod]
@@ -115,6 +115,8 @@ namespace UnitTestSinglyLinkedLists
         }
 
         [TestMethod]
+        //Hint: Think about methods.  Write a method that will return whatever
+        //is passed into the the new instance of the object.
         public void NodeToString()
         {
             SinglyLinkedListNode node = new SinglyLinkedListNode("foo");

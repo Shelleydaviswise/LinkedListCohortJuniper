@@ -23,7 +23,10 @@ namespace SinglyLinkedLists
                 {
                     throw new System.ArgumentException();
                 }
-       //Essentiall this is saying: "If the current value of the node and the Next
+                next = value;     
+       
+
+       //Essentially this is saying: "If the current node is trying to be the next node,
        //throw the ArgumentException error.
             }
         }
@@ -53,7 +56,7 @@ namespace SinglyLinkedLists
             // Used by the visualizer:
             allNodes.Add(this);
 
-
+           
         }
        
 
@@ -68,5 +71,10 @@ namespace SinglyLinkedLists
         {
             throw new NotImplementedException();
         }
-    }
+
+        public string ToString()
+       {
+            return value;
+        }
+   }
 }
