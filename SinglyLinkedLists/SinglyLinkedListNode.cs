@@ -15,16 +15,26 @@ namespace SinglyLinkedLists
         private SinglyLinkedListNode next;
         public SinglyLinkedListNode Next
         {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException(); }
+            //"next" is always null by definition
+            get { return next; }
+            set
+            {
+                if (this == value)
+                {
+                    throw new System.ArgumentException();
+                }
+       //Essentiall this is saying: "If the current value of the node and the Next
+       //throw the ArgumentException error.
+            }
         }
 
         private string value;
         public string Value 
         {
-            get { throw new NotImplementedException(); }
+            get {return value; }
+       
         }
-
+          
         public static bool operator <(SinglyLinkedListNode node1, SinglyLinkedListNode node2)
         {
             // This implementation is provided for your convenience.
@@ -39,11 +49,14 @@ namespace SinglyLinkedLists
 
         public SinglyLinkedListNode(string value)
         {
-            throw new NotImplementedException();
-
+            this.value = value;
             // Used by the visualizer:
             allNodes.Add(this);
+
+
         }
+       
+
 
         // READ: http://msdn.microsoft.com/en-us/library/system.icomparable.compareto.aspx
         public int CompareTo(Object obj)
