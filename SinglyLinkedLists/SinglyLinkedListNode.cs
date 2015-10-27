@@ -72,8 +72,8 @@ namespace SinglyLinkedLists
             throw new NotImplementedException();
         }
 
-        public string ToString()
-       {
+        public override string ToString()
+        {
             return value;
         }
    }

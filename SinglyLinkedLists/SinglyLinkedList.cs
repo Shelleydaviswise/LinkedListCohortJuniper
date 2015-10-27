@@ -11,6 +11,10 @@ namespace SinglyLinkedLists
         {
             // NOTE: This constructor isn't necessary, once you've implemented the constructor below.
         }
+        private SinglyLinkedListNode node;
+        private string first;
+        private SinglyLinkedListNode firstNode;
+
 
         // READ: http://msdn.microsoft.com/en-us/library/aa691335(v=vs.71).aspx
         public SinglyLinkedList(params object[] values)
@@ -32,12 +36,20 @@ namespace SinglyLinkedLists
 
         public void AddFirst(string value)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void AddLast(string value)
         {
-           
+            if (firstNode == null)
+            {
+                firstNode = new SinglyLinkedListNode(value);
+            }
+            else
+            {
+                //Actually Attach new nodes to the end of the list
+            }
+
         }
 
         // NOTE: There is more than one way to accomplish this.  One is O(n).  The other is O(1).
@@ -53,7 +65,14 @@ namespace SinglyLinkedLists
 
         public string First()
         {
-            throw new NotImplementedException();
+            if (firstNode == null)
+            {
+                return null;
+            }
+            else
+            {
+                return firstNode.Value;
+            } 
         }
 
         public int IndexOf(string value)
