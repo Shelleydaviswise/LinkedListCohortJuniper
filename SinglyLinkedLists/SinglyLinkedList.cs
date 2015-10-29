@@ -11,8 +11,7 @@ namespace SinglyLinkedLists
         {
             // NOTE: This constructor isn't necessary, once you've implemented the constructor below.
         }
-        private SinglyLinkedListNode node;
-        private string first;
+       
         private SinglyLinkedListNode firstNode;
 
 

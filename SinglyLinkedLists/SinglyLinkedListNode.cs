@@ -5,7 +5,8 @@ using System.Text;
 
 // Stretch Goals: Using Generics, which would include implementing GetType() http://msdn.microsoft.com/en-us/library/system.object.gettype(v=vs.110).aspx
 namespace SinglyLinkedLists
-{
+
+    { 
     public class SinglyLinkedListNode : IComparable
     {
         // Used by the visualizer.  Do not change.
@@ -30,8 +31,11 @@ namespace SinglyLinkedLists
        //throw the ArgumentException error.
             }
         }
-
+        
         private string value;
+        //private SinglyLinkedListNode node1 = new SinglyLinkedListNode("value");
+        //private SinglyLinkedListNode node2 = new SinglyLinkedListNode("value");
+        
         public string Value 
         {
             get {return value; }
@@ -55,8 +59,6 @@ namespace SinglyLinkedLists
             this.value = value;
             // Used by the visualizer:
             allNodes.Add(this);
-
-           
         }
        
 
@@ -64,13 +66,36 @@ namespace SinglyLinkedLists
         // READ: http://msdn.microsoft.com/en-us/library/system.icomparable.compareto.aspx
         public int CompareTo(Object obj)
         {
-            throw new NotImplementedException();
+          
+        }
+
+        public override bool Equals(object obj)
+        {
+            //casting other from an object to get a name so we can address it.
+            SinglyLinkedListNode other = obj as SinglyLinkedListNode;
+            if (other == null)
+            {
+                return false;
+            }
+            else {
+                return (this.Value == other.Value);
+            }
+
+            return (this.Value == other.Value);
+            //return base.Equals(obj);
+        }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+            {
+                return this.Value.GetHashCode();
+            }
         }
 
         public bool IsLast()
-        {
-            throw new NotImplementedException();
-        }
+    {
+            return (Next == null);          
+    }
 
         public override string ToString()
         {
